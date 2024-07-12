@@ -1,0 +1,23 @@
+server:
+    #port: ${PORT:9999}
+    port: 8889
+spring:
+    application:
+        name: admin-server    
+eureka:
+    instance:
+        #instanceId: ${spring.application.name}:{server.port}
+        instanceId: ${spring.application.name}
+    client:
+        serviceUrl:
+            defaultZone:  ${EUREKA_SERVER:http://localhost:8761/eureka}
+            registerWithEureka: true
+            fetchRegistry: true
+            healthcheck:
+               enabled: true
+            refresh:
+               enable: true             
+
+
+
+  
